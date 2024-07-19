@@ -1,7 +1,7 @@
 
 debugger
 const mongoose = require('mongoose')
-const mongoUri = process.env.MONGO_URL
+const mongoUri = process.env.MONGO_URI
 
 const connectDatabase = async () => {
     try {
