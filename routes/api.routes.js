@@ -1,7 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const user = require('./../routes/reserve.routes');
-
-router.use('/api', user)
+const reserve = require('./../routes/reserve.routes');
+router.use ('/api',reserve)
 
 module.exports = router

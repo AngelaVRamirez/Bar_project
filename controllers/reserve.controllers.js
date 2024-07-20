@@ -1,24 +1,18 @@
-const { param } = require('../routes/reserve.routes');
 const Reserve= require('./../models/Reserve')
 const { request, response } = require('express')
 
-const createReserve = async (req = request, res = response) => {
-    const {email} = req.body;
+const createReserve = async (req,res) => {
+    const {dbdate} = req.body;
     try {
-        const user = await Reserve.findOne({email});
-        if(user) {
-            return res.status(400).json({
-                ok: false,
-                msg: 'Email is already exist in Database!!!'
-            })
-        }
-        const dbUser = new User({
-            email: email, 
-        })
-        await dbUser.save()
-        return res.status(201).json({
-            ok: true,
-            msg: `User: ${email} created successfuly`
+        if(!dbdate)return res.status(400).json({
+            ok:false,
+            msg:'the date is mandatory'
+        })       
+        const jsonArray = await Date(dbdate).toLocaleDateString({})
+        if (jsonArray)
+         return res.status(201).json({
+            ok:true,
+            msg: `Listo!! Ya reservaste en la Tribuna - Bienvenida!!!`
         })
     } catch(error) {
         console.log(error)
@@ -30,5 +24,6 @@ const createReserve = async (req = request, res = response) => {
 }
 
 module.exports = {
+    createReserve
 
 }
