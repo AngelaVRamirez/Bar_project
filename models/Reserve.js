@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const userSchema = Schema({
-    NombreyApellido: {
+    NombreyA: {
         type: String,
         require: true,
         unique: false
