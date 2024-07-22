@@ -1,9 +1,9 @@
-const { param } = require('../routes/subscribe.routes');
+/*const { param } = require('../routes/subscribe.routes');*/
 const User= require('./../models/subscribe')
 const {request,response} = require('express')
 
-const createUser = async(req,res) => {
-    const {email} = req.body
+const createUser = async(req=request,res=response) => {
+    const {email} = req.body;
     try {
         const user = await User.findOne({email:email})
         if(user) return res.status(400).json({
@@ -22,8 +22,23 @@ const createUser = async(req,res) => {
         })
     } 
 }
-
+const getAllSubscribe = async(req,res) =>{
+    try{
+        const users = await User.find()
+        return res.status(200).json({
+            OK:true,
+            users: users
+        })
+    } catch(error) {
+        console.log(error)
+        return res.status(500).json({
+            ok: false,
+            msg: 'Please contact to support'
+        })
+    }
+}
 
 module.exports = {
-    createUser
+    createUser,
+    getAllSubscribe
 }

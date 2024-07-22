@@ -1,12 +1,17 @@
 const { Schema, model } = require('mongoose');
 
-const userSchema = Schema({
-    NombreyA: {
+const reserveSchema = Schema({
+    nombre: {
         type: String,
         require: true,
         unique: false
     },
-    TamanodeGrupo: {
+    apellido: {
+        type: String,
+        require: true,
+        unique: false
+    },
+    tamanodeGrupo: {
         type: String,
         require: true,
         unique: true
@@ -16,10 +21,10 @@ const userSchema = Schema({
         require: true,
         unique: true
     },
-    Fecha: {
+    fecha: {
         type: Date,
         require: true
     }
 })
 
-module.exports = model('Reserve', userSchema)
+module.exports = model('Reserve',reserveSchema)
