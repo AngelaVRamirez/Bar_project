@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model } = require('mongoose','moment');
 
 const reserveSchema = Schema({
     nombre: {
@@ -21,7 +21,7 @@ const reserveSchema = Schema({
         require: true,
         unique: true
     },
-    fecha: {
+    date:{
         type: Date,
         require: true
     }

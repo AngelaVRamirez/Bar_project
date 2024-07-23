@@ -4,9 +4,10 @@ const dotenv = require('dotenv');
 const api = require('./routes/api.routes')
 
 
+
 dotenv.config();
 const port = process.env.PORT;
-const connectDatabase = require ('./db/config')
+const connectDatabase = require ('./db/config');
 connectDatabase ();
 
 
