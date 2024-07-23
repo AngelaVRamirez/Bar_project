@@ -2,8 +2,12 @@ const Reserve= require('./../models/Reserve')
 const { request, response } = require('express')
 
 
+
 const createReserve = async (req = request,res = response) => {
     const {date} = req.body;
+
+const createReserve = async (req=request,res=response) => {
+    const {dbdate} = req.body;
     try {
        /* const date = await Reserve.toLocaleDateString({dbdate});*/
         if(!date)return res.status(400).json({
@@ -20,7 +24,14 @@ const createReserve = async (req = request,res = response) => {
             apellido:apellido,
             tamanodeGrupo:tamanodeGrupo,
             email:email,
-            date:date
+            date:date,
+            msg:'the date is mandatory'
+        })       
+        const jsonArray = await Date(dbdate).toLocaleDateString({})
+        if (jsonArray)
+        return res.status(201).json({
+            ok:true,
+            msg: `Listo!! Ya reservaste en la Tribuna - Bienvenida!!!`
         })
         await dbDate.save()
         return res.status (201).json ({ 
@@ -36,8 +47,9 @@ const createReserve = async (req = request,res = response) => {
         })
     }
 }
+}
 
 module.exports = {
     createReserve
-
 }
+    

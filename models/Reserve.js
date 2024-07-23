@@ -27,4 +27,4 @@ const reserveSchema = Schema({
     }
 })
 
-module.exports = model('Reserve', reserveSchema)
+module.exports = model('Reserve',reserveSchema)
