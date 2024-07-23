@@ -9,7 +9,7 @@ const createReserve = async (req = request,res = response) => {
 const createReserve = async (req=request,res=response) => {
     const {dbdate} = req.body;
     try {
-       /* const date = await Reserve.toLocaleDateString({dbdate});*/
+    /* const date = await Reserve.toLocaleDateString({dbdate});*/
         if(!date)return res.status(400).json({
         ok:false,
         msg:'the date is mandatory'
@@ -39,7 +39,7 @@ const createReserve = async (req=request,res=response) => {
             msg: 'Perfecto!!Ya reservaste en la Tribuna - Bienvenid@!!!'  
         })
 
-       } catch(error) {
+        } catch(error) {
         console.log(error)
         return res.status(500).json({
             ok: false,
