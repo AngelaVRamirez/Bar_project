@@ -1,8 +1,6 @@
 const Reserve= require('./../models/Reserve')
 const { request, response } = require('express')
 
-
-
 const createReserve = async (req = request,res = response) => {
     const {date} = req.body;
 
