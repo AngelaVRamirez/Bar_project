@@ -1,10 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const subscribe = require('./subscribe.routes');
+const reservationRoutes = require('./reserve.routes');
 
 router.use ('/api', subscribe)
-const reserve = require('./../routes/reserve.routes');
-router.use ('/api',reserve)
-
+router.use ('/api',reservationRoutes)
 
 module.exports = router

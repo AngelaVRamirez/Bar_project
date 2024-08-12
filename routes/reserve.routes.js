@@ -1,8 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const {createReserve} = require('../controllers/reserve.controllers')
+const {createReservation} = require('../controllers/reserve.controllers')
 
-router.post('/create_reserve',createReserve)
-
-
+router.post('/createReservation',createReservation)   
 module.exports = router
