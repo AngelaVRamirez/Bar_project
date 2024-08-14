@@ -1,7 +1,7 @@
 const { Schema, model} = require ('mongoose');
 
-const fileSchema = Schema({
-    nombreCompleto: {
+const candidateSchema = Schema({
+    NombreCompleto: {
         type: String,
         require: true,
         unique: false
@@ -11,15 +11,15 @@ const fileSchema = Schema({
         require: true,
         unique: false
     },
-    email: {
+    Email: {
         type: String,
         require: true,
         unique: true
     },
-    data:{
+    Cv:{
         type: Object,
         require: true
     }
 })
 
-module.exports = model('File',fileSchema)
+module.exports = model('candidate',candidateSchema)
