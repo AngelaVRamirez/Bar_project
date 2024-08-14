@@ -2,12 +2,7 @@ const express = require('express')
 const app = express();
 const dotenv = require('dotenv');
 const api = require('./routes/api.routes')
-<<<<<<< HEAD
-=======
 
-
-
->>>>>>> 98768aa9b828293d96151e3d6de39388fc8f0d28
 dotenv.config();
 
 
