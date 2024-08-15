@@ -30,7 +30,24 @@ catch(error) {
 }
 }
 
+const getAllReservation = async(req,res) =>{
+    try{
+        const reservation = await Reservation.find()
+        return res.status(200).json({
+            OK:true,
+            reservation: reservation
+        })
+    } catch(error) {
+        console.log(error)
+        return res.status(500).json({
+            ok: false,
+            msg: 'Please contact to support'
+        })
+    }
+}
+
 module.exports = {
-    createReservation
+    createReservation,
+    getAllReservation
 }
     
