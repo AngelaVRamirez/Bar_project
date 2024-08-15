@@ -3,15 +3,15 @@ const { Schema, model } = require('mongoose');
 const reservationSchema = new Schema({
     name: {
         type: String,
-        require: true,
+        require: true
     },
     date: {
         type: String,
-        require: true,
+        require: true
     },
     email: {
         type: String,
-        require: true,
+        require: true
     }
 })
 
