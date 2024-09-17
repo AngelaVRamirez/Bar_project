@@ -8,7 +8,7 @@ const uploadCandidate = async(req,res)=>{
         if(!Cv) {
             return res.status(400).json({
                 ok: false,
-                msg: 'Debe adjuntar su hoja de vida'
+                msg: 'Debe diligenciar todos los campos!!'
             })
         }
 

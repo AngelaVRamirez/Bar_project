@@ -8,4 +8,4 @@ router.use ('/api', subscribe)
 router.use ('/api',reservationRoutes)
 router.use('/api', candidateRoutes)
 
-module.exports = router
+module.exports = router     
