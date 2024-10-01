@@ -24,8 +24,7 @@ app.get('/*', (req, res, next) => {
 });
 app.use('/', api)
 
+module.exports = app
 
 
-app.listen(port, () =>{
-    console.log(`Servidor conectado en el puerto ${port}`)
-})
+
